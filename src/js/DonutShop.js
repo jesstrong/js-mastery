@@ -1,46 +1,96 @@
 class DonutShop {
-    constructor(){
-        //Need donut count (part of Feature 1)
-    this.TotalDonuts = 0; 
-         //Need auto clickers count
-    this.AutoClickerCount = 0; 
-         //Need auto clicker cost     
-    this.AutoClickerCost = 20; //verify what sh cost be?? 
-         //Need donut multiplier (how many we have - count)
-    this.DonutMultiplierCount = 0;
-         //have a donut multiplier cost
-    this.DonutMultiplierCost = 100; 
+    constructor() {
+       this.donutCount = 0;
+       this.autoDonutClickerCost = 100;
+       this.autoDonutClickerCount = 0; 
+       this.donutMultiplierCount = 0; 
+       this.donutMultiplierCost = 10; 
 
-        //costs for auto clickers and multipliers - need methods for these
-    this.Multiplier = 1.01; 
-    this.AutoPriceUp = 1.05;
-    this.MultiplierPriceUp = 1.1;
-    
-    }     
-            
-    getTotalDonutsCount(){
-        return this.TotalDonuts; 
+    }
+     clickForDonut(){
+         this.donutCount += 1 * this.totalDonutValue();
+     }
+
+    getDonutClickCount(){
+        return (this.donutCount);
     }
     
-    getAutoClickerCount(){
-        return this.AutoClickerCount;
+    getDonutMultiplierCount() {
+        return this.donutMultiplierCount;
+    }
+   
+    getDonutMultiplierCost(){
+        return this.donutMultiplierCost; 
+    }
+
+    getAutoDonutClickerCount(){
+        return this.autoDonutClickerCount;
     }
 
     getAutoClickerCost(){
-        return this.AutoClickerCost; 
+        return this.autoDonutClickerCost; 
     }
 
-    getDonutMultiplierCount(){
-        return this.DonutMultiplierCount;
+    buyDonutAutoClicker(){
+        this.autoDonutClickerCost += 1; 
+        this.subtractAutoDonutClickerCost();
+        this.increaseAutoDonutClickerCost();
     }
 
-    getDonutMultiplierCost(){
-        return this.DonutMultiplierCost; 
+    subtractAutoDonutClickerCost(){
+        this.donutCount -= (this.autoDonutClickerCost);
     }
 
+    increaseAutoDonutClickerCost(){
+        this.autoDonutClickerCost += this.autoDonutClickerCost * 0.1; 
+    }
 
+    notEnoughClicksToPurchaseAutoClicker(){
+        return this.autoDonutClickerCount < this.autoDonutClickerCost; 
+    }
 
+    checkClickCountToBuyAutoClicker(){
+        if(this.notEnoughClicksToPurchaseAutoClicker()){
+            return null;
+        } else {
+            this.buyAutoDonutClicker();
+        } 
+    }
 
-
+    turnOnAutoDonutClicker(){
+        for (let i = 0; i < this.autoDonutClickerCount; i++){
+            this.clickForDonut();
+        }
+    }
     
+    purchaseDonutMultiplier(){
+        this.donutMultiplierCount += 1;
+        this.subtractDonutMultiplierCostFromDonutCount();
+        this.increaseDonutMultiplierCost();
+    }
+
+    subtractDonutMultiplierCostFromDonutCount(){
+        this.donutCount -= this.donutMultiplierCost; 
+    }
+
+    increaseDonutMultiplierCost(){
+        this.donutMultiplierCost += this.donutMultiplierCost * 0.1;
+    }
+
+    hasInsufficientClicksToBuyDonutMultiplier(){
+        return this.donutCount < this.donutMultiplierCost;
+    }
+
+    checkClickCountToBuyDonutMultiplier() {
+        if(this.notEnoughClicksToPurchaseDonutMultiplier()){
+            return null;
+        } else {
+            this.buyDonutMultiplier;
+        } 
+    }
+
+    calculateDonutMultiplierValue(){
+        return Math.pow(1.2, this.donutMultiplierCount);
+    }
+
 }
