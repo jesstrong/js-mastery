@@ -1,56 +1,72 @@
 class DonutShop {
     constructor() {
-       this.donutCount = 0;
-       this.autoDonutClickerCost = 100;
-       this.autoDonutClickerCount = 0; 
-       this.donutMultiplierCount = 0; 
-       this.donutMultiplierCost = 10; 
+       this.DonutCount = 0;
+       this.AutoDonutClickerCost = 100; //verify this amount
+       this.AutoDonutClickerCount = 0; 
+       this.DonutMultiplierCount = 0; 
+       this.DonutMultiplierCost = 10;  //verify this amount
+     
+       this.Multiplier = 1.01; //verify this amount 
 
     }
-     clickForDonut(){
-         this.donutCount += 1 * this.totalDonutValue();
-     }
-
-    getDonutClickCount(){
-        return (this.donutCount);
+     
+    getDonutCount(){
+        return this.DonutCount; 
     }
-    
-    getDonutMultiplierCount() {
-        return this.donutMultiplierCount;
+            
+    getAutoDonutClickerCount() {
+        return this.AutoDonutClickerCount;
     }
    
+    getAutoDonutClickerCost(){
+        return this.AutoDonutClickerCost;
+    }
+
+    getDonutMultiplierCount(){
+        return this.DonutMultiplierCount;        
+    }
+
     getDonutMultiplierCost(){
-        return this.donutMultiplierCost; 
+        return this.getDonutMultiplierCost; 
     }
 
-    getAutoDonutClickerCount(){
-        return this.autoDonutClickerCount;
+    getDonutMultiplier(){
+        return Math.pow(this.Multiplier, this.DonutMultiplierCount);
     }
 
-    getAutoClickerCost(){
-        return this.autoDonutClickerCost; 
+    AddDonuts = (toAdd) => {
+        this.DonutCount += toAdd; 
+    }
+    
+    AddAuto = () => {
+       this.AutoDonutClickerCount++; 
     }
 
-    buyDonutAutoClicker(){
-        this.autoDonutClickerCost += 1; 
-        this.subtractAutoDonutClickerCost();
+    AddDonutMulti = () => {
+        this.DonutMultiplierCount++; 
+    }
+
+
+    /*buyAutoDonutClicker(){
+        this.autoDonutClickerCount += 1; 
+        this.subtractAutoDonutClickerCostFromAutoDonutClickerCount();
         this.increaseAutoDonutClickerCost();
     }
 
-    subtractAutoDonutClickerCost(){
-        this.donutCount -= (this.autoDonutClickerCost);
-    }
-
+    
     increaseAutoDonutClickerCost(){
         this.autoDonutClickerCost += this.autoDonutClickerCost * 0.1; 
     }
 
-    notEnoughClicksToPurchaseAutoClicker(){
-        return this.autoDonutClickerCount < this.autoDonutClickerCost; 
-    }
+    
 
-    checkClickCountToBuyAutoClicker(){
-        if(this.notEnoughClicksToPurchaseAutoClicker()){
+
+
+
+
+
+    checkClickCountToBuyAutoDonutClicker(){
+        if(this.notEnoughClicksToPurchaseAutoDonutClicker()){
             return null;
         } else {
             this.buyAutoDonutClicker();
@@ -69,17 +85,12 @@ class DonutShop {
         this.increaseDonutMultiplierCost();
     }
 
-    subtractDonutMultiplierCostFromDonutCount(){
-        this.donutCount -= this.donutMultiplierCost; 
-    }
-
+    
     increaseDonutMultiplierCost(){
         this.donutMultiplierCost += this.donutMultiplierCost * 0.1;
     }
 
-    hasInsufficientClicksToBuyDonutMultiplier(){
-        return this.donutCount < this.donutMultiplierCost;
-    }
+    
 
     checkClickCountToBuyDonutMultiplier() {
         if(this.notEnoughClicksToPurchaseDonutMultiplier()){
@@ -91,6 +102,6 @@ class DonutShop {
 
     calculateDonutMultiplierValue(){
         return Math.pow(1.2, this.donutMultiplierCount);
-    }
+    }*/
 
 }
