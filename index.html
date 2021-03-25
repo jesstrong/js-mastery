@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donut Maker Clicker</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
 </head>
 <body>
 
+    <button id="myBtn">Inspiration for Clicker Game</button>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Fred Doughman, started in 1986 making great cookies. 10 years later, he saw a need to go "online" and started to 
+                sell cookies across the state of Ohio and the U.S. His son, who became a software developer thought about the 
+                internet transcations of how many cookies where being sold. (record sales in 1994-2000) As the popularity
+                increased for the cookies so did "gaming" online and the idea was born. "The Cookie Clicker Game" was created and 
+                from that original idea, has created an exponetial growth in many versions of the game even to today.</p>
+        </div>
+    </div>
    
     <header>
         <h1>The Donut Maker Clicker Game</h1>
     </header>
     
-    <button id="myBtn">Open Modal</button>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal....</p>
-        </div>
-    </div>
 
-    
-    
+       
     
     <!--<nav>
         <a href="#company">Fred the Baker Baking Company</a>
@@ -34,39 +37,26 @@
     <main>
         
         
-        <div id="donutCount"> 0 </div>
-        <div id="autoCountText"> 0 </div>
-        <div id="multCountText"> 0 </div>
-        <div id="autoText"> 0 </div>
-        <div id="multText"> 0 </div>
+        <div id="donutCount">Donuts:   0</div>
+
+        <div id="autoCountText">Donut AutoClicker Count:  0</div>
+        <div id="autoClickerCost">AutoClicker Cost:  0</div>
+
+        <div id="multiplierCount">Donut Multiplier:  0</div>
+        <div id="multipleCost">Donut Multiplier Cost:  0</div>
         
-        <button id="clickButton">Click Button</button>
-        <button id="autoClickButton">Buy Donut Clicker</button>
-        <button id="multButton">Buy Donut Multiplier</button>
-        
+         <!--Button ID's-->
+        <button id="clickButton">Click to Play Button Here</button>
+        <button id="autoClickButton">Buy Auto Donut Clicker</button>
+        <button id="multiButton">Buy Donut Multiplier</button>
+        <button id="resetButton">Reset Game Here</button>
         
         <section id="company">
             <h2>Fred the Baker Baking Company</h2>
             <img src="./images/donutmakerFred.jpeg" alt="donutmakerFred" class="center">
         </section>    
         
-        <section id="inspiration"> 
-            <h2>Inspiration for the game! The Cookie Clicker</h2>
-            <p> Fred Doughman, started in 1986 making great cookies. 10 years later, he saw a need to go "online" and started to 
-                sell cookies across the state of Ohio and the U.S. His son, who became a software developer thought about the 
-                internet transcations of how many cookies where being sold. (record sales in 1994-2000) As the popularity
-                increased for the cookies so did "gaming" online and the idea was born. "The Cookie Clicker Game" was created and 
-                from that original idea, has created an exponetial growth in many versions of the game even to today.
-                Premise for original game:  
-                In the game Cookie Clicker you click cookies. For every cookie click, as you might have guessed, 
-                the player receives a cookie. With the obtained cookies, the player can purchase things that help 
-                generate cookies more rapidly. Initially, the player can start with purchasing cursors that help with 
-                clicking on cookies but before long this escalates into obtaining cookie farms, factories, mines and 
-                many other ludicrous cookie generators. Eventually, the game even lets the player research upgrades to
-                increase cookie production. For all the cookies, cookie generators and upgrades obtained the player can 
-                gain achievements. The game tracks many statistics that will accompany the player's ever expanding cookie 
-                empire.</p>
-        </section>
+        
         <section id="contactinfo">
             <h2>Contact Info</h2>
             <p>Happy to talk more about the game and find out about the Developer!</p>
