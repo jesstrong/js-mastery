@@ -49,75 +49,47 @@ footer {
         padding: 1 em 0; 
         text-align: center;
         border-radius: 10px; 
-        
+       
 }
 
-.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-content {
-	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
+.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
 }
   
-.modal2 {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal2-content {
-	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
-}
-.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
+.dropdown {
+	position: relative;
+	display: inline-block;
 }
   
-.close:hover,
-.close:focus {
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	font-size: smaller;
+}
+  
+.dropdown-content a {
 	color: black;
+	padding: 12px 16px;
 	text-decoration: none;
-	cursor: pointer;
-}
-
-.close2 {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
+	display: block;
 }
   
-.close2:hover,
-.close2:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
+.dropdown-content a:hover {
+	background-color: #ddd;
 }
-
+  
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+  
+.dropdown:hover .dropbtn {
+	background-color: #3e8e41;
+}
