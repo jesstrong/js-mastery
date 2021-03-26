@@ -56,22 +56,26 @@ function AutoClickButton(){
     console.log("buy auto clicker");
     myDS.AddAuto();
     UpdateText();
+
 }
 
 function MultiButton(){
     console.log("buy multiplier");
     myDS.AddDonutMulti();
     UpdateText();
+
 }
 
-//FUNCTIONS FOR 
+//FUNCTIONS FOR ACTIONS
 function UpdateText(){
     donutCount.innerText = "Donuts" + Math.floor(myDS.getDonutCount());
     autoCountText.innerText = "Donut AutoClicker Count" + myDS.getAutoDonutClickerCount();
     autoClickerCost.innerText = "Auto Donutclicker Cost" + myDS.getAutoDonutClickerCost() + "donuts";
-    multiplierCount.innerText = "Status Multiplier" + myDS.GetDonutMultiplier() + "x";
-    multipleCost.innerText = "Multiplier Cost" + myDS.getDonutMultiplierCost() + "donuts";
+    multiplierCount.innerText = "Status Multiplier" + myDS.GetDonutMultiplier().toFixed(2) + "x";
+    multipleCost.innerText = "Multiplier Cost" + myDS.getDonutMultiplierCost().toFixed(2) + "donuts";
+    UpdateButtons();
 }
+
 function AddClicker(){
     if(myDS.DonutCount >= myDS.getAutoDonutClickerCost()){
       myDS.AddDonuts(-myDS.getAutoDonutClickerCost());
@@ -85,6 +89,10 @@ function ResetGame(){
     UpdateText();
     }
     
+function UpdateButtons(){
+    autoClickButton.disabled =!(myDS.getDonutCount() >=myDS.getAutoDonutClickerCost());
+    multiButton.disabled =!(myDS.getDonutCount() >=myDS.getDonutMultiplierCost());
+}
 
 
 
